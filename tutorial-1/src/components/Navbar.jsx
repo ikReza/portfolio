@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
   Drawer,
@@ -20,8 +21,10 @@ import {
   AssignmentInd,
   Apps,
   ContactMail,
+  AccountCircle,
 } from "@material-ui/icons";
-import avatar from "../avatar.png";
+import avatar from "../profile.jpg";
+import Footer from "./Footer";
 
 const useStyles = makeStyles((theme) => ({
   typo: {
@@ -31,10 +34,16 @@ const useStyles = makeStyles((theme) => ({
       cursor: "default",
     },
   },
+  arrowIcon: {
+    color: "tomato",
+    "&:active": {
+      color: "#66FCF1",
+    },
+  },
   menuSliderContainer: {
     height: "100%",
     width: "100%",
-    background: "#511",
+    background: "#1F2833",
   },
   avatar: {
     display: "block",
@@ -42,8 +51,14 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(13),
     width: theme.spacing(13),
   },
-  listItem: {
+  listItem1: {
     color: "tan",
+  },
+  listItem2: {
+    color: "tan",
+    "&:hover": {
+      color: "tomato",
+    },
   },
 }));
 
@@ -51,25 +66,31 @@ const menuItems = [
   {
     listIcon: <Home />,
     listText: "Home",
+    link: "/",
   },
   {
     listIcon: <AssignmentInd />,
     listText: "Resume",
+    link: "/resume",
   },
   {
     listIcon: <Apps />,
     listText: "Portfolio",
+    link: "/portfolio",
   },
   {
     listIcon: <ContactMail />,
     listText: "Contacts",
+    link: "/contact",
+  },
+  {
+    listIcon: <AccountCircle />,
+    listText: "About Me",
+    link: "/about",
   },
 ];
 
 const Navbar = () => {
-  // const [state, setState] = useState({
-  //   right: false,
-  // });
   const [isOpen, setIsOpen] = useState(false);
   const classes = useStyles();
 
@@ -83,13 +104,13 @@ const Navbar = () => {
       <Divider />
       <List>
         {menuItems.map((item, key) => (
-          <ListItem button key={key}>
-            <ListItemIcon className={classes.listItem}>
+          <ListItem button key={key} component={Link} to={item.link}>
+            <ListItemIcon className={classes.listItem1}>
               {item.listIcon}
             </ListItemIcon>
             <ListItemText
               primary={item.listText}
-              className={classes.listItem}
+              className={classes.listItem2}
             />
           </ListItem>
         ))}
@@ -97,18 +118,13 @@ const Navbar = () => {
     </Box>
   );
 
-  // const toggleSlider = (slider, open) => () => {
-  //   setState({ ...state, [slider]: open });
-  // };
-
   return (
     <>
       <Box component="nav">
-        <AppBar position="static" style={{ background: "#222" }}>
+        <AppBar position="static" style={{ background: "#0B0C10" }}>
           <Toolbar>
-            {/* <IconButton onClick={toggleSlider("right", true)}> */}
             <IconButton onClick={() => setIsOpen(true)}>
-              <ArrowBack style={{ color: "tomato" }} />
+              <ArrowBack className={classes.arrowIcon} />
             </IconButton>
             <Typography className={classes.typo}>Hello!</Typography>
             <Drawer
@@ -117,6 +133,7 @@ const Navbar = () => {
               onClose={() => setIsOpen(false)}
             >
               {sideList()}
+              <Footer />
             </Drawer>
           </Toolbar>
         </AppBar>

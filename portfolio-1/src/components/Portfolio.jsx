@@ -8,11 +8,19 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  createMuiTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+} from "@material-ui/core/styles";
 import { GitHub, Language } from "@material-ui/icons";
 
 import Navbar from "./Navbar";
 import PROJECTS from "./projects";
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 const useStyles = makeStyles(() => ({
   media: {
@@ -77,6 +85,22 @@ const Portfolio = () => {
   return (
     <Box component="div" className={classes.mainContainer}>
       <Navbar />
+      <Grid container>
+        <Grid item xs={1}></Grid>
+        <Grid item xs={11} sm={8} md={6}>
+          <Box
+            style={{
+              margin: "3vh auto",
+            }}
+          >
+            <ThemeProvider theme={theme}>
+              <Typography gutterBottom variant="h4" style={{ color: "tomato" }}>
+                Web Development Projects:
+              </Typography>
+            </ThemeProvider>
+          </Box>
+        </Grid>
+      </Grid>
       <Grid container justify="center" spacing={1}>
         {PROJECTS.map((p) => (
           <Grid item xs={12} sm={8} md={6} key={p.id}>

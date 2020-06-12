@@ -13,24 +13,29 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import {
-  ArrowBack,
+  Menu,
   Home,
   AssignmentInd,
   Apps,
   ContactMail,
   AccountCircle,
+  Facebook,
+  Instagram,
+  YouTube,
+  LinkedIn,
 } from "@material-ui/icons";
 import avatar from "../profile.jpg";
 import Footer from "./Footer";
 
 const useStyles = makeStyles((theme) => ({
   typo: {
+    flexGrow: 1.5,
     color: "white",
     "&:hover": {
-      color: "red",
       cursor: "default",
     },
   },
@@ -60,7 +65,44 @@ const useStyles = makeStyles((theme) => ({
       color: "tomato",
     },
   },
+  menuButton: {
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
+  desktopView: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+  desktopButton: {
+    flexGrow: 1.5,
+    color: "tomato",
+    background: "#1F2833",
+    margin: "auto 1vw",
+    "&:hover": {
+      background: "#233",
+      filter: "brightness(200%)",
+    },
+  },
+  btn: {
+    flexGrow: 0.7,
+    background: "white",
+    margin: "auto 0.5vw",
+    padding: theme.spacing(0.5),
+    display: "inline-block",
+    "&:hover": {
+      background: "#d2d9d3",
+    },
+  },
 }));
+
+//links
+const fb = "https://www.facebook.com/kaiser.ireza";
+const yt = "https://www.youtube.com/channel/UCoDVvnIbgHH7oZS67iLiEfg";
+const ig = "https://www.instagram.com/kaiser_reza";
+const ln = "https://www.linkedin.com/in/ibrahim-kaiser/";
 
 const menuItems = [
   {
@@ -122,11 +164,55 @@ const Navbar = () => {
     <>
       <Box component="nav">
         <AppBar position="static" style={{ background: "#0B0C10" }}>
-          <Toolbar>
-            <IconButton onClick={() => setIsOpen(true)}>
-              <ArrowBack className={classes.arrowIcon} />
+          <Toolbar style={{ display: "flex" }}>
+            <IconButton
+              onClick={() => setIsOpen(true)}
+              className={classes.menuButton}
+            >
+              <Menu className={classes.arrowIcon} />
             </IconButton>
-            <Typography className={classes.typo}>Hello!</Typography>
+            <Typography className={classes.typo}>Ibrahim Kaiser</Typography>
+            <List className={classes.desktopView}>
+              {menuItems.map((item, key) => (
+                <Button
+                  component={Link}
+                  to={item.link}
+                  key={key}
+                  variant="contained"
+                  size="small"
+                  className={classes.desktopButton}
+                >
+                  {item.listText}
+                </Button>
+              ))}
+            </List>
+            <List className={classes.desktopView}>
+              <IconButton
+                className={classes.btn}
+                onClick={() => window.open(fb)}
+                style={{ marginLeft: "10vw" }}
+              >
+                <Facebook size="small" style={{ color: "#3b5998" }} />
+              </IconButton>
+              <IconButton
+                className={classes.btn}
+                onClick={() => window.open(ln)}
+              >
+                <LinkedIn style={{ color: "#0e76a8" }} />
+              </IconButton>
+              <IconButton
+                className={classes.btn}
+                onClick={() => window.open(ig)}
+              >
+                <Instagram style={{ color: "#3f729b" }} />
+              </IconButton>
+              <IconButton
+                className={classes.btn}
+                onClick={() => window.open(yt)}
+              >
+                <YouTube style={{ color: "#c4302b" }} />
+              </IconButton>
+            </List>
             <Drawer
               anchor="right"
               open={isOpen}

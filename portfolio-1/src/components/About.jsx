@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
 import "./About.css";
-import { Box, Typography, Card, Grid, Avatar, Button } from "@material-ui/core";
+import { Box, Typography, Grid, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Navbar from "./Navbar";
 
 const useStyles = makeStyles((theme) => ({
   box1: {
-    height: "100vh",
     width: "100%",
     background: "#659DBD",
   },
-  card: { padding: "10px", textAlign: "justify" },
+  card: { padding: "10px", textAlign: "justify", background: "#233" },
   circle: {
     height: "200px",
     width: "200px",
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "30px",
   },
   text: {
-    color: "white",
+    color: "tan",
   },
   avatar: {
     margin: "0.5rem 1rem",
@@ -82,7 +82,7 @@ const About = () => {
               <Typography
                 variant="h5"
                 gutterBottom
-                style={{ color: "white", fontWeight: 150 }}
+                style={{ color: "tomato", fontWeight: 150 }}
               >
                 Hi, This is Kaiser,
               </Typography>
@@ -94,18 +94,26 @@ const About = () => {
               <br />
               <Typography component="p" gutterBottom className={classes.text}>
                 Since my graduation, I have been investing time to add some
-                extra skills in my feather. I have learned Machine Learning
+                extra skills to my profile. I have learned Machine Learning
                 using python, MERN Stack for web development. I have finished
                 courses mainly from Udemy and Coursera and took help from some
-                other online resources e.g. StackOverflow, Youtube. And also I
-                did some hands-on projects using these skills which are added in
-                the portfolio section.
+                other online resources e.g. StackOverflow, Youtube. Using these
+                skills I did some hands-on projects too which are added in the{" "}
+                {
+                  <Link
+                    style={{ textDecoration: "none", color: "#66FCF1" }}
+                    to="/portfolio"
+                  >
+                    portfolio
+                  </Link>
+                }{" "}
+                section.
               </Typography>
               <br />
               <Typography component="p" gutterBottom className={classes.text}>
-                Aside my academic life I also enjoy sharing life updates in my
-                social networks. I have some other hobbies like - travelling,
-                dancing, photography.
+                Apart from my academic life, I also enjoy sharing life updates
+                in my social networks. I have some other hobbies like -
+                travelling, dancing, photography.
               </Typography>
               <br />
               <Typography component="p" gutterBottom className={classes.text}>
@@ -114,8 +122,15 @@ const About = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={8}>
-            <Box style={{ padding: "10px", marginTop: "2vh" }} borderTop={5}>
-              <Typography style={{ display: "block", color: "white" }}>
+            <Box
+              style={{
+                padding: "10px",
+                margin: "3vh auto",
+                background: "#233",
+              }}
+              borderTop={5}
+            >
+              <Typography style={{ display: "block", color: "tomato" }}>
                 Things I love:
               </Typography>
               <Box
@@ -131,6 +146,7 @@ const About = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    flexWrap: "wrap",
                   }}
                 >
                   <Box
@@ -145,7 +161,7 @@ const About = () => {
                       src="/assets/images/trekking.jpg"
                       className={classes.avatar}
                     />
-                    <Typography>Trekking</Typography>
+                    <Typography className={classes.text}>Trekking</Typography>
                   </Box>
                   <Box
                     style={{
@@ -159,7 +175,7 @@ const About = () => {
                       src="/assets/images/coffee.jpg"
                       className={classes.avatar}
                     />
-                    <Typography>Coffee</Typography>
+                    <Typography className={classes.text}>Coffee</Typography>
                   </Box>
                   <Box
                     style={{
@@ -173,7 +189,7 @@ const About = () => {
                       src="/assets/images/dance.jpg"
                       className={classes.avatar}
                     />
-                    <Typography>Dance</Typography>
+                    <Typography className={classes.text}>Dance</Typography>
                   </Box>
                   <Box
                     style={{
@@ -187,7 +203,9 @@ const About = () => {
                       src="/assets/images/tree.jpg"
                       className={classes.avatar}
                     />
-                    <Typography>Planting Trees</Typography>
+                    <Typography className={classes.text}>
+                      Planting Trees
+                    </Typography>
                   </Box>
                   <Box
                     style={{
@@ -201,7 +219,9 @@ const About = () => {
                       src="/assets/images/video.png"
                       className={classes.avatar}
                     />
-                    <Typography>Video Editing</Typography>
+                    <Typography className={classes.text}>
+                      Video Editing
+                    </Typography>
                   </Box>
                 </Box>
               </Box>
@@ -212,7 +232,7 @@ const About = () => {
 
       {/* cool */}
 
-      <Box component="div" className="swiper-container">
+      {/* <Box component="div" className="swiper-container">
         <Typography variant="h3" gutterBottom>
           Travelling
         </Typography>
@@ -280,7 +300,7 @@ const About = () => {
         <div className="swiper-pagination" />
         <div className="swiper-button-next"></div>
         <div className="swiper-button-prev"></div>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

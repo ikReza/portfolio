@@ -33,7 +33,7 @@ import Footer from "./Footer";
 
 const useStyles = makeStyles((theme) => ({
   typo: {
-    flexGrow: 1.5,
+    flexGrow: 1,
     color: "white",
     "&:hover": {
       cursor: "default",
@@ -77,23 +77,30 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   desktopButton: {
-    flexGrow: 1.5,
     color: "tomato",
     background: "#1F2833",
     margin: "auto 1vw",
+    width: "16%",
     "&:hover": {
       background: "#233",
-      filter: "brightness(200%)",
+      filter: "brightness(150%)",
     },
   },
   btn: {
-    flexGrow: 0.7,
     background: "white",
     margin: "auto 0.5vw",
     padding: theme.spacing(0.5),
-    display: "inline-block",
     "&:hover": {
       background: "#d2d9d3",
+    },
+  },
+  instaBtn: {
+    background:
+      "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
+    margin: "auto 0.5vw",
+    padding: theme.spacing(0.5),
+    "&:hover": {
+      filter: "brightness(80%)",
     },
   },
 }));
@@ -172,7 +179,7 @@ const Navbar = () => {
               <Menu className={classes.arrowIcon} />
             </IconButton>
             <Typography className={classes.typo}>Ibrahim Kaiser</Typography>
-            <List className={classes.desktopView}>
+            <List className={classes.desktopView} style={{ flexGrow: 10 }}>
               {menuItems.map((item, key) => (
                 <Button
                   component={Link}
@@ -186,11 +193,10 @@ const Navbar = () => {
                 </Button>
               ))}
             </List>
-            <List className={classes.desktopView}>
+            <List className={classes.desktopView} style={{ flexGrow: 1 }}>
               <IconButton
                 className={classes.btn}
                 onClick={() => window.open(fb)}
-                style={{ marginLeft: "10vw" }}
               >
                 <Facebook size="small" style={{ color: "#3b5998" }} />
               </IconButton>
@@ -201,10 +207,10 @@ const Navbar = () => {
                 <LinkedIn style={{ color: "#0e76a8" }} />
               </IconButton>
               <IconButton
-                className={classes.btn}
+                className={classes.instaBtn}
                 onClick={() => window.open(ig)}
               >
-                <Instagram style={{ color: "#3f729b" }} />
+                <Instagram style={{ color: "white" }} />
               </IconButton>
               <IconButton
                 className={classes.btn}

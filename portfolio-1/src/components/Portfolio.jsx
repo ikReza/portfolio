@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactPlayer from "react-player";
 import {
   Box,
   Grid,
@@ -95,6 +96,45 @@ const Portfolio = () => {
           >
             <ThemeProvider theme={theme}>
               <Typography gutterBottom variant="h4" style={{ color: "tomato" }}>
+                Machine Learning Projects:
+              </Typography>
+            </ThemeProvider>
+          </Box>
+        </Grid>
+      </Grid>
+
+      <Grid container justify="center">
+        <Grid item xs={10} sm={8} md={6}>
+          <Box component="div" style={{ background: "#D3D3D3" }}>
+            <ReactPlayer
+              width="100%"
+              height="30vh"
+              controls
+              url="https://youtu.be/mgmHRLrhbmc"
+            />
+            <Box style={{ padding: "2%" }}>
+              <Typography style={{ marginTop: "1vh", textAlign: "justify" }}>
+                This is a simple project using computer vision with YOLOv3.
+                YOLOv3 is an algorithm that uses deep convolutional neural
+                networks to perform object detection. I used YOLOv3-416 model
+                and COCO dataset. The mAP (mean Average Precision) of this model
+                is 55.3.
+              </Typography>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+
+      <Grid container>
+        <Grid item xs={1}></Grid>
+        <Grid item xs={11} sm={8} md={6}>
+          <Box
+            style={{
+              margin: "3vh auto",
+            }}
+          >
+            <ThemeProvider theme={theme}>
+              <Typography gutterBottom variant="h4" style={{ color: "tomato" }}>
                 Web Development Projects:
               </Typography>
             </ThemeProvider>
@@ -103,7 +143,7 @@ const Portfolio = () => {
       </Grid>
       <Grid container justify="center" spacing={1}>
         {PROJECTS.map((p) => (
-          <Grid item xs={12} sm={8} md={6} key={p.id}>
+          <Grid item xs={11} sm={8} md={6} key={p.id}>
             <Card className={classes.cardContainer}>
               <Box className={classes.imgContainer}>
                 <img alt={p.name} src={p.image} className={classes.media} />

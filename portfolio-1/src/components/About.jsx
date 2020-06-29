@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Swiper from "swiper";
-import "swiper/css/swiper.min.css";
-import "./About.css";
 import { Box, Typography, Grid, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -41,31 +38,6 @@ const useStyles = makeStyles((theme) => ({
 //JSX
 const About = () => {
   const classes = useStyles();
-
-  useEffect(() => {
-    new Swiper(".swiper-container", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      loop: true,
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  }, []);
 
   return (
     <Box component="div">
@@ -229,78 +201,6 @@ const About = () => {
           </Grid>
         </Grid>
       </Box>
-
-      {/* cool */}
-
-      {/* <Box component="div" className="swiper-container">
-        <Typography variant="h3" gutterBottom>
-          Travelling
-        </Typography>
-        <div className="swiper-wrapper">
-          <Card
-            className="swiper-slide"
-            style={{ backgroundImage: "url(assets/images/tour-1.jpg)" }}
-          >
-            <Box class="div">
-              <Typography variant="h6">Phalut</Typography>
-              <Typography component="p">West Bengal, India</Typography>
-              <Button>Read More</Button>
-            </Box>
-          </Card>
-          <Card
-            className="swiper-slide"
-            style={{ backgroundImage: "url(assets/images/tour-2.jpg)" }}
-          >
-            <Box class="div">
-              <Typography variant="h6">Kohima</Typography>
-              <Typography component="p">Nagaland, India</Typography>
-              <Button>Read More</Button>
-            </Box>
-          </Card>
-          <Card
-            className="swiper-slide"
-            style={{ backgroundImage: "url(assets/images/tour-3.jpg)" }}
-          >
-            <Box class="div">
-              <Typography variant="h6">Dzukou Valley</Typography>
-              <Typography component="p">Nagaland, India</Typography>
-              <Button>Read More</Button>
-            </Box>
-          </Card>
-        </div>
-
-        <div className="swiper-pagination" />
-        <div className="swiper-button-next"></div>
-        <div className="swiper-button-prev"></div>
-      </Box>
-
-      <Box component="div" className="swiper-container">
-        <Typography variant="h3" gutterBottom>
-          Travelling
-        </Typography>
-        <div className="swiper-wrapper">
-          <Card
-            className="swiper-slide"
-            style={{ backgroundImage: "url(assets/images/tour-1.jpg)" }}
-          >
-            <Typography variant="h4" style={{ color: "red" }}>
-              Space
-            </Typography>
-          </Card>
-          <Card
-            className="swiper-slide"
-            style={{ backgroundImage: "url(assets/images/tour-2.jpg)" }}
-          ></Card>
-          <Card
-            className="swiper-slide"
-            style={{ backgroundImage: "url(assets/images/tour-3.jpg)" }}
-          ></Card>
-        </div>
-
-        <div className="swiper-pagination" />
-        <div className="swiper-button-next"></div>
-        <div className="swiper-button-prev"></div>
-      </Box> */}
     </Box>
   );
 };

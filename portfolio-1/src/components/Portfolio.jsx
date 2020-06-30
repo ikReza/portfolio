@@ -19,6 +19,7 @@ import { GitHub, Language } from "@material-ui/icons";
 
 import Navbar from "./Navbar";
 import PROJECTS from "./projects";
+import MainFooter from "./MainFooter";
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -192,6 +193,7 @@ const Portfolio = () => {
           </Grid>
         ))}
       </Grid>
+      <MainFooter />
     </Box>
   );
 };

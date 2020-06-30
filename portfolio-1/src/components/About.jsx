@@ -1,19 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Typography, Grid, Avatar } from "@material-ui/core";
+import { Box, Typography, Grid, Avatar, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Navbar from "./Navbar";
+import MainFooter from "./MainFooter";
 
 const useStyles = makeStyles((theme) => ({
   box1: {
     width: "100%",
-    background: "#659DBD",
+    background: "transparent",
   },
   card: { padding: "10px", textAlign: "justify", background: "#233" },
   circle: {
     height: "200px",
     width: "200px",
+    borderRadius: "50%",
+    float: "left",
+    shapeOutside: "circle()",
+    margin: "30px",
+  },
+  mblCircle: {
+    height: "150px",
+    width: "150px",
     borderRadius: "50%",
     float: "left",
     shapeOutside: "circle()",
@@ -44,13 +53,22 @@ const About = () => {
       <Navbar />
       <Box component="div" className={classes.box1}>
         <Grid container justify="center">
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={11} sm={8} md={9}>
             <Box className={classes.card}>
-              <img
-                src="assets/images/card.jpg"
-                alt="Ibrahim Kaiser"
-                className={classes.circle}
-              />
+              <Hidden xsDown>
+                <img
+                  src="assets/images/card.jpg"
+                  alt="Ibrahim Kaiser"
+                  className={classes.circle}
+                />
+              </Hidden>
+              <Hidden smUp>
+                <img
+                  src="assets/images/card.jpg"
+                  alt="Ibrahim Kaiser"
+                  className={classes.mblCircle}
+                />
+              </Hidden>
               <Typography
                 variant="h5"
                 gutterBottom
@@ -93,7 +111,7 @@ const About = () => {
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={11} sm={8} md={9}>
             <Box
               style={{
                 padding: "10px",
@@ -201,6 +219,7 @@ const About = () => {
           </Grid>
         </Grid>
       </Box>
+      <MainFooter />
     </Box>
   );
 };

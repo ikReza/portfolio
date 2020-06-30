@@ -12,6 +12,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import { Send } from "@material-ui/icons";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Navbar from "./Navbar";
+import ContactFooter from "./ContactFooter";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -241,6 +242,7 @@ const Contact = () => {
           </Box>
         </Grid>
       </Grid>
+      <ContactFooter />
     </Box>
   );
 };

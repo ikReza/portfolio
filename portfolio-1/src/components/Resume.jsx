@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core/styles";
 import { Email, LinkedIn, GitHub } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import MainFooter from "./MainFooter";
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -567,6 +568,7 @@ const Resume = () => {
             </Box>
           </Grid>
         </Grid>
+        <MainFooter />
       </Box>
     </>
   );

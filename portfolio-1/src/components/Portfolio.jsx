@@ -9,13 +9,16 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
 import {
   makeStyles,
   createMuiTheme,
   ThemeProvider,
   responsiveFontSizes,
 } from "@material-ui/core/styles";
-import { GitHub, Language } from "@material-ui/icons";
+import { GitHub, Language, ExpandMore } from "@material-ui/icons";
 
 import Navbar from "./Navbar";
 import PROJECTS from "./projects";
@@ -77,6 +80,12 @@ const useStyles = makeStyles(() => ({
       background: "#333",
     },
   },
+  root: {
+    backgroundColor: "#C5C6C7",
+  },
+  rootBody: {
+    backgroundColor: "#C5CBE3",
+  },
 }));
 
 const Portfolio = () => {
@@ -104,8 +113,8 @@ const Portfolio = () => {
         </Grid>
       </Grid>
 
-      <Grid container justify="center">
-        <Grid item xs={10} sm={8} md={6}>
+      <Grid container justify="center" spacing={2}>
+        <Grid item xs={11} sm={8} md={5}>
           <Box component="div" style={{ background: "#D3D3D3" }}>
             <ReactPlayer
               width="100%"
@@ -114,13 +123,59 @@ const Portfolio = () => {
               url="https://youtu.be/mgmHRLrhbmc"
             />
             <Box style={{ padding: "2%" }}>
-              <Typography style={{ marginTop: "1vh", textAlign: "justify" }}>
-                This is a simple project using computer vision with YOLOv3.
-                YOLOv3 is an algorithm that uses deep convolutional neural
-                networks to perform object detection. I used YOLOv3-416 model
-                and COCO dataset. The mAP (mean Average Precision) of this model
-                is 55.3.
-              </Typography>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMore />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                  className={classes.root}
+                >
+                  <Typography className={classes.rootSummary}>
+                    Object Detection
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails className={classes.rootBody}>
+                  <Typography style={{ textAlign: "justify" }}>
+                    This is a simple project using computer vision with YOLOv3.
+                    YOLOv3 is an algorithm that uses deep convolutional neural
+                    networks to perform object detection. I used YOLOv3-416
+                    model and COCO dataset. The mAP (mean Average Precision) of
+                    this model is 55.3.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </Box>
+          </Box>
+        </Grid>
+
+        <Grid item xs={11} sm={8} md={5}>
+          <Box component="div" style={{ background: "#D3D3D3" }}>
+            <ReactPlayer
+              width="100%"
+              height="30vh"
+              controls
+              url="https://youtu.be/Dr_Ic6tZVjw"
+            />
+            <Box style={{ padding: "2%" }}>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMore />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                  className={classes.root}
+                >
+                  <Typography>Vehicle Counting</Typography>
+                </AccordionSummary>
+                <AccordionDetails className={classes.rootBody}>
+                  <Typography style={{ textAlign: "justify" }}>
+                    This model can count vehicles on the road. Although it is
+                    quite accurate to count the vehicles, the efficiency can be
+                    improved by adjusting some parameters. It works in a manner
+                    that - if the center of the detected vehicles' bounding box
+                    crosses the defined line, the model counts it.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             </Box>
           </Box>
         </Grid>
@@ -131,7 +186,7 @@ const Portfolio = () => {
         <Grid item xs={11} sm={8} md={6}>
           <Box
             style={{
-              margin: "3vh auto",
+              margin: "5vh auto 0 auto",
             }}
           >
             <ThemeProvider theme={theme}>

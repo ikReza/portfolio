@@ -12,6 +12,7 @@
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-ga": "^3.1.2",
     "react-jss": "^10.1.1",
     "react-particles-js": "^3.2.1",
     "react-player": "^2.4.0",

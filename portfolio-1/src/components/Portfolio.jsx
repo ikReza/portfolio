@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactGA from "react-ga";
 import ReactPlayer from "react-player";
 import {
   Box,
@@ -93,6 +94,21 @@ const Portfolio = () => {
   const [hoverR, setHoverR] = useState(false);
   const [ID, setID] = useState(-1);
   const classes = useStyles();
+
+  const detectionAnalytics = () => {
+    ReactGA.event({
+      category: "Object Detection",
+      action: "Watching object detection project",
+    });
+  };
+
+  const countingAnalytics = () => {
+    ReactGA.event({
+      category: "Vehicle Counting",
+      action: "Watching vehicle counting project",
+    });
+  };
+
   return (
     <Box component="div" className={classes.mainContainer}>
       <Navbar />
@@ -129,6 +145,7 @@ const Portfolio = () => {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                   className={classes.root}
+                  onClick={detectionAnalytics}
                 >
                   <Typography className={classes.rootSummary}>
                     Object Detection
@@ -159,6 +176,7 @@ const Portfolio = () => {
             <Box style={{ padding: "2%" }}>
               <Accordion>
                 <AccordionSummary
+                  onClick={countingAnalytics}
                   expandIcon={<ExpandMore />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"

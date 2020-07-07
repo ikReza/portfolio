@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactGA from "react-ga";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -143,6 +144,20 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const classes = useStyles();
 
+  const googleAnalyticsMobile = () => {
+    ReactGA.event({
+      category: "Mobile User",
+      action: "Clicked the button from sidebar",
+    });
+  };
+
+  const googleAnalyticsDesktop = () => {
+    ReactGA.event({
+      category: "Desktop User",
+      action: "Clicked the button from Navbar",
+    });
+  };
+
   const sideList = () => (
     <Box
       component="div"
@@ -153,7 +168,13 @@ const Navbar = () => {
       <Divider />
       <List>
         {menuItems.map((item, key) => (
-          <ListItem button key={key} component={Link} to={item.link}>
+          <ListItem
+            button
+            key={key}
+            component={Link}
+            to={item.link}
+            onClick={googleAnalyticsMobile}
+          >
             <ListItemIcon className={classes.listItem1}>
               {item.listIcon}
             </ListItemIcon>
@@ -188,6 +209,7 @@ const Navbar = () => {
                   variant="contained"
                   size="small"
                   className={classes.desktopButton}
+                  onClick={googleAnalyticsDesktop}
                 >
                   {item.listText}
                 </Button>

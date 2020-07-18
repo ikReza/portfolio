@@ -252,7 +252,7 @@ const Resume = () => {
                   AutoCAD
                 </Typography>
                 <Typography style={{ color: "tan" }} component="li">
-                  ETABS
+                  PTV Vissim
                 </Typography>
                 <Typography style={{ color: "tan" }} component="li">
                   SketchUp

@@ -242,7 +242,7 @@ const Resume = () => {
             <Box style={{ padding: "2%" }}>
               <Typography
                 gutterBottom
-                align="center"
+                align="left"
                 style={{ color: "whitesmoke" }}
               >
                 Software
@@ -264,7 +264,7 @@ const Resume = () => {
             <Box style={{ padding: "2%" }}>
               <Typography
                 gutterBottom
-                align="center"
+                align="left"
                 style={{ color: "whitesmoke" }}
               >
                 Programming
@@ -280,7 +280,7 @@ const Resume = () => {
                   JavaScript
                 </Typography>
                 <Typography style={{ color: "tan" }} component="li">
-                  Machine Learning
+                  Machine Learning (Python)
                 </Typography>
               </ul>
             </Box>
@@ -289,7 +289,7 @@ const Resume = () => {
             <Box style={{ padding: "2%" }}>
               <Typography
                 gutterBottom
-                align="center"
+                align="left"
                 style={{ color: "whitesmoke" }}
               >
                 Frontend
@@ -299,10 +299,19 @@ const Resume = () => {
                   ReactJS
                 </Typography>
                 <Typography style={{ color: "tan" }} component="li">
-                  HTML
+                  HTML5
                 </Typography>
                 <Typography style={{ color: "tan" }} component="li">
                   CSS3
+                </Typography>
+                <Typography style={{ color: "tan" }} component="li">
+                  Material-UI
+                </Typography>
+                <Typography style={{ color: "tan" }} component="li">
+                  SAAS
+                </Typography>
+                <Typography style={{ color: "tan" }} component="li">
+                  Bootstrap
                 </Typography>
               </ul>
             </Box>
@@ -311,7 +320,7 @@ const Resume = () => {
             <Box style={{ padding: "2%" }}>
               <Typography
                 gutterBottom
-                align="center"
+                align="left"
                 style={{ color: "whitesmoke" }}
               >
                 Backend
@@ -327,7 +336,7 @@ const Resume = () => {
             <Box style={{ padding: "2%" }}>
               <Typography
                 gutterBottom
-                align="center"
+                align="left"
                 style={{ color: "whitesmoke" }}
               >
                 Database

@@ -13,81 +13,20 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import {
-  makeStyles,
   createMuiTheme,
   ThemeProvider,
   responsiveFontSizes,
 } from "@material-ui/core/styles";
+import { useStyles } from "./styles";
 import { GitHub, Language, ExpandMore } from "@material-ui/icons";
 
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 import { MACHINE, WEB, FRONTEND } from "./projects";
-import MainFooter from "./MainFooter";
-import ProjectNavigation from "./ProjectNavigation";
+import MainFooter from "../MainFooter";
+import ProjectNavigation from "../ProjectNavigation";
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
-
-const useStyles = makeStyles(() => ({
-  media: {
-    height: "25vh",
-    width: "90%",
-    display: "flex",
-    alignItems: "center",
-    transition: "0.6s",
-    opacity: 0.7,
-    "&:hover": {
-      height: "31vh",
-      width: "100%",
-      opacity: 1,
-    },
-  },
-  mainContainer: {
-    height: "100%",
-    background: "#233",
-  },
-  cardContainer: {
-    height: "46vh",
-    maxWidth: "345px",
-    margin: "3rem auto",
-    background: "#D3D3D3",
-    transition: "0.6s",
-    "&:hover": {
-      background: "black",
-      color: "tomato",
-    },
-  },
-  imgContainer: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  btnBox: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  btnLeft: {
-    color: "tomato",
-    border: "1px solid tomato",
-    width: "40%",
-    "&:hover": {
-      background: "#333",
-    },
-  },
-  btnRight: {
-    color: "tomato",
-    border: "1px solid tomato",
-    width: "40%",
-    "&:hover": {
-      background: "#333",
-    },
-  },
-  root: {
-    backgroundColor: "#C5C6C7",
-  },
-  rootBody: {
-    backgroundColor: "#C5CBE3",
-  },
-}));
 
 const Portfolio = () => {
   const [hoverL, setHoverL] = useState(false);
@@ -125,8 +64,6 @@ const Portfolio = () => {
                 <Accordion>
                   <AccordionSummary
                     expandIcon={<ExpandMore />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
                     className={classes.root}
                   >
                     <Typography className={classes.rootSummary}>
@@ -196,6 +133,7 @@ const Portfolio = () => {
                 <Button
                   size="small"
                   color="primary"
+                  disabled={p.id === 2 ? true : false}
                   onMouseEnter={() => {
                     setHoverL(true);
                     setID(p.id);

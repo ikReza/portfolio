@@ -13,22 +13,24 @@ export const MACHINE = [
   },
 ];
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 export const WEB = [
   {
     id: 0,
+    name: "E-commerce",
+    description: "MERN Stack + Redux",
+    image: "assets/images/amazona.jpg",
+    gitLink: "https://github.com/ikReza/ecommerce2-with-redux",
+    webLink: "https://ikr-amazona.netlify.app/",
+  },
+  {
+    id: 1,
     name: "Online Shop",
     description: "MERN Stack",
     image: "assets/images/p-1.jpg",
     gitLink: "https://github.com/ikReza/Add-To-Cart-Place-Order",
     webLink: "https://sharp-minsky-a909d8.netlify.app/",
-  },
-  {
-    id: 1,
-    name: "Chat Application",
-    description: "MERN Stack(with validation)",
-    image: "assets/images/p-2.jpg",
-    gitLink: "https://github.com/ikReza/Chat-with-Pokemon-character",
-    webLink: "https://goofy-shannon-fc7c35.netlify.app",
   },
   {
     id: 2,
@@ -47,6 +49,8 @@ export const WEB = [
     webLink: "https://vigorous-ritchie-6baaee.netlify.app",
   },
 ];
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const FRONTEND = [
   {

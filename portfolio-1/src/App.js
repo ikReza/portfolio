@@ -4,9 +4,9 @@ import "./App.css";
 import { CssBaseline } from "@material-ui/core";
 import Home from "./components/Home";
 import Resume from "./components/Resume";
-import Portfolio from "./components/Portfolio";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import Portfolio from "./components/portfolio/Portfolio";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
 
 import ReactGA from "react-ga";
 

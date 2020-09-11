@@ -19,7 +19,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Menu,
-  Home,
+  Book,
   AssignmentInd,
   Apps,
   ContactMail,
@@ -36,9 +36,6 @@ const useStyles = makeStyles((theme) => ({
   typo: {
     flexGrow: 1,
     color: "white",
-    "&:hover": {
-      cursor: "default",
-    },
   },
   arrowIcon: {
     color: "tomato",
@@ -114,11 +111,6 @@ const ln = "https://www.linkedin.com/in/ibrahim-kaiser/";
 
 const menuItems = [
   {
-    listIcon: <Home />,
-    listText: "Home",
-    link: "/",
-  },
-  {
     listIcon: <AssignmentInd />,
     listText: "Resume",
     link: "/resume",
@@ -127,6 +119,11 @@ const menuItems = [
     listIcon: <Apps />,
     listText: "Portfolio",
     link: "/portfolio",
+  },
+  {
+    listIcon: <Book />,
+    listText: "Blog",
+    link: "/blog",
   },
   {
     listIcon: <ContactMail />,
@@ -199,7 +196,9 @@ const Navbar = () => {
             >
               <Menu className={classes.arrowIcon} />
             </IconButton>
-            <Typography className={classes.typo}>Ibrahim Kaiser</Typography>
+            <Typography component={Link} to="/" className={classes.typo}>
+              Ibrahim Kaiser
+            </Typography>
             <List className={classes.desktopView} style={{ flexGrow: 10 }}>
               {menuItems.map((item, key) => (
                 <Button

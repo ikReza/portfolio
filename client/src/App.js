@@ -1,14 +1,18 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
-import { CssBaseline } from "@material-ui/core";
+
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import Resume from "./components/Resume";
+import Resume from "./components/resume/Resume";
 import Portfolio from "./components/portfolio/Portfolio";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
+import Blog from "./components/blog/blog";
 
 import ReactGA from "react-ga";
+
+import "./App.css";
+import { CssBaseline } from "@material-ui/core";
 
 function App() {
   useEffect(() => {
@@ -20,6 +24,7 @@ function App() {
 
   return (
     <Router>
+      <Navbar />
       <CssBaseline />
       <Switch>
         <Route path="/" exact component={Home} />
@@ -27,6 +32,7 @@ function App() {
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />
+        <Route path="/blog" component={Blog} />
       </Switch>
     </Router>
   );

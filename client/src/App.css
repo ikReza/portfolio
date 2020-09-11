@@ -2,3 +2,12 @@ body {
   background: url(coffee-apple.jpg) no-repeat center center fixed;
   overflow-x: hidden;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}

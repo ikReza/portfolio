@@ -18,6 +18,14 @@ export const MACHINE = [
 export const WEB = [
   {
     id: 0,
+    name: "CRWN Clothing",
+    description: "React + Redux + Firebase",
+    image: "assets/images/crwn.gif",
+    gitLink: "https://github.com/ikReza/crwn-clothing",
+    webLink: "https://ikr-crwn-live.netlify.app/",
+  },
+  {
+    id: 1,
     name: "E-commerce",
     description: "MERN Stack + Redux",
     image: "assets/images/amazona.jpg",
@@ -25,20 +33,12 @@ export const WEB = [
     webLink: "https://ikr-amazona.netlify.app/",
   },
   {
-    id: 1,
+    id: 2,
     name: "Online Shop",
     description: "MERN Stack",
     image: "assets/images/p-1.jpg",
     gitLink: "https://github.com/ikReza/Add-To-Cart-Place-Order",
     webLink: "https://sharp-minsky-a909d8.netlify.app/",
-  },
-  {
-    id: 2,
-    name: "Portfolio Website",
-    description: "ReactJS, NodeJS",
-    image: "assets/images/p-3.jpg",
-    gitLink: "",
-    webLink: "",
   },
   {
     id: 3,

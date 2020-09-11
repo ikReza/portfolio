@@ -67,7 +67,7 @@ const Header = () => {
             "Civil Engineering",
             "Web Development",
             "Web Design",
-            "MERN Stack",
+            "Machine Learning",
           ]}
           typeSpeed={40}
           backSpeed={50}

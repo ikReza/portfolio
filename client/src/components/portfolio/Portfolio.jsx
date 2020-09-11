@@ -20,7 +20,6 @@ import {
 import { useStyles } from "./styles";
 import { GitHub, Language, ExpandMore } from "@material-ui/icons";
 
-import Navbar from "../Navbar";
 import { MACHINE, WEB, FRONTEND } from "./projects";
 import MainFooter from "../MainFooter";
 import ProjectNavigation from "../ProjectNavigation";
@@ -36,7 +35,6 @@ const Portfolio = () => {
 
   return (
     <Box component="div" className={classes.mainContainer}>
-      <Navbar />
       <ProjectNavigation />
       <Grid container id="machine-learning">
         <Grid item xs={1}></Grid>
@@ -133,7 +131,6 @@ const Portfolio = () => {
                 <Button
                   size="small"
                   color="primary"
-                  disabled={p.id === 2 ? true : false}
                   onMouseEnter={() => {
                     setHoverL(true);
                     setID(p.id);

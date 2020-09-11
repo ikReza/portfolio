@@ -11,7 +11,6 @@ import {
 import MuiAlert from "@material-ui/lab/Alert";
 import { Send } from "@material-ui/icons";
 import { withStyles } from "@material-ui/core/styles";
-import Navbar from "../Navbar";
 import ContactFooter from "../ContactFooter";
 import { useStyles } from "./styles";
 
@@ -119,7 +118,6 @@ const Contact = () => {
 
   return (
     <Box component="div" style={{ height: "100vh", background: "#233" }}>
-      <Navbar />
       <Grid container justify="center" align="center">
         <Grid item xs={10} sm={5} md={3}>
           <Box
@@ -148,6 +146,9 @@ const Contact = () => {
               size="medium"
               inputProps={{
                 style: { color: "white" },
+                form: {
+                  autocomplete: "off",
+                },
               }}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -163,6 +164,9 @@ const Contact = () => {
               size="medium"
               inputProps={{
                 style: { color: "white" },
+                form: {
+                  autocomplete: "off",
+                },
               }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}

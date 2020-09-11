@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography, Grid, Avatar, Hidden } from "@material-ui/core";
 
-import Navbar from "../Navbar";
 import MainFooter from "../MainFooter";
 import { useStyles } from "./styles";
 
@@ -12,7 +11,6 @@ const About = () => {
 
   return (
     <Box component="div">
-      <Navbar />
       <Box component="div" className={classes.box1}>
         <Grid container justify="center">
           <Grid item xs={11} sm={8} md={9}>

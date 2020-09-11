@@ -1,0 +1,21 @@
+.topic-box {
+  color: white;
+  background: tomato;
+  margin: 4vh auto;
+  font-weight: bolder;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 5px tomato, 0 0 25px tomato, 0 0 50px tomato,
+      0 0 200px tomato;
+  }
+
+  .topic-text {
+    font-size: 24px;
+    text-align: center;
+
+    @media screen and (max-width: 600px) {
+      font-size: 20px;
+    }
+  }
+}

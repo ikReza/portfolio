@@ -11,7 +11,11 @@ import { SKILLS } from "./skillList";
 import "./resume.scss";
 import MyName from "./myName";
 
+<<<<<<< HEAD
 const useStyles = makeStyles(() => ({
+=======
+const useStyles = makeStyles((theme) => ({
+>>>>>>> 73b70ecf5993afc5800f8d70b6d20a38aa50bb3b
   mainContainer: {
     background: "#233",
     color: "tomato",

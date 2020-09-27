@@ -1,18 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Resume from "./components/resume/Resume";
-import Portfolio from "./components/portfolio/Portfolio";
-import About from "./components/about/About";
-import Contact from "./components/contact/Contact";
-import Blog from "./components/blog/blog";
+import Navbar from "./components/navbar/Navbar";
+import Loading from "./components/loading/Loading";
 
 import ReactGA from "react-ga";
 
 import "./App.css";
 import { CssBaseline } from "@material-ui/core";
+
+const Home = lazy(() => import("./components/Home"));
+const Resume = lazy(() => import("./components/resume/Resume"));
+const Portfolio = lazy(() => import("./components/portfolio/Portfolio"));
+const About = lazy(() => import("./components/about/About"));
+const Contact = lazy(() => import("./components/contact/Contact"));
+const Blog = lazy(() => import("./components/blog/blog"));
 
 function App() {
   useEffect(() => {
@@ -27,12 +29,14 @@ function App() {
       <Navbar />
       <CssBaseline />
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/resume" component={Resume} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/about" component={About} />
-        <Route path="/blog" component={Blog} />
+        <Suspense fallback={<Loading />}>
+          <Route path="/" exact component={Home} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/portfolio" component={Portfolio} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} />
+          <Route path="/blog" component={Blog} />
+        </Suspense>
       </Switch>
     </Router>
   );

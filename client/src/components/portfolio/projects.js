@@ -1,3 +1,18 @@
+// ML
+import trafficSign from "../assets/traffic-sign.gif";
+
+// fullstack
+import crwn from "../assets/crwn.gif";
+import amazona from "../assets/amazona.jpg";
+import addToCart from "../assets/p-1.jpg";
+import chatApp from "../assets/p-4.PNG";
+
+// frontend
+import corona from "../assets/corona.JPG";
+import studio from "../assets/studio.JPG";
+import weather1 from "../assets/weather-1.JPG";
+import weather2 from "../assets/weather-2.JPG";
+
 export const MACHINE = [
   {
     name: "Object Detection",
@@ -13,6 +28,17 @@ export const MACHINE = [
   },
 ];
 
+export const MLProjects = [
+  {
+    id: 0,
+    name: "Traffic Sign Classification",
+    image: trafficSign,
+    short_desc: "Tensorflow, OpenCV, Streamlit",
+    gitLink: "https://github.com/ikReza/traffic-sign-classification",
+    webLink: "https://ikr-traffic-signclassification.herokuapp.com/",
+  },
+];
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const WEB = [
@@ -20,7 +46,7 @@ export const WEB = [
     id: 0,
     name: "CRWN Clothing",
     description: "React + Redux + Firebase",
-    image: "assets/images/crwn.gif",
+    image: crwn,
     gitLink: "https://github.com/ikReza/crwn-clothing",
     webLink: "https://ikr-crwn-live.netlify.app/",
   },
@@ -28,7 +54,7 @@ export const WEB = [
     id: 1,
     name: "E-commerce",
     description: "MERN Stack + Redux",
-    image: "assets/images/amazona.jpg",
+    image: amazona,
     gitLink: "https://github.com/ikReza/ecommerce2-with-redux",
     webLink: "https://ikr-amazona.netlify.app/",
   },
@@ -36,7 +62,7 @@ export const WEB = [
     id: 2,
     name: "Online Shop",
     description: "MERN Stack",
-    image: "assets/images/p-1.jpg",
+    image: addToCart,
     gitLink: "https://github.com/ikReza/Add-To-Cart-Place-Order",
     webLink: "https://sharp-minsky-a909d8.netlify.app/",
   },
@@ -44,7 +70,7 @@ export const WEB = [
     id: 3,
     name: "Chat Application",
     description: "ReactJS, NodeJS",
-    image: "assets/images/p-4.PNG",
+    image: chatApp,
     gitLink: "https://github.com/ikReza/SimpleChatApp",
     webLink: "https://vigorous-ritchie-6baaee.netlify.app",
   },
@@ -57,7 +83,7 @@ export const FRONTEND = [
     id: 0,
     name: "Cronavirus Tracker",
     short_desc: "ReactJs, Material-UI",
-    image: "assets/images/corona.jpg",
+    image: corona,
     gitLink: "https://github.com/ikReza/coronavirus-tracker",
     webLink: "https://ikr-coronavirus-tracker.netlify.app/",
   },
@@ -65,7 +91,7 @@ export const FRONTEND = [
     id: 1,
     name: "Company Studio",
     short_desc: "ReactJs, SASS, Reactstrap",
-    image: "assets/images/studio.jpg",
+    image: studio,
     gitLink: "https://github.com/ikReza/office-studio",
     webLink: "https://spa1-studio.netlify.app/",
   },
@@ -73,7 +99,7 @@ export const FRONTEND = [
     id: 2,
     name: "Weather App",
     short_desc: "ReactJs, Material-UI",
-    image: "assets/images/weather-1.jpg",
+    image: weather1,
     gitLink: "https://github.com/ikReza/weather-app1",
     webLink: "https://ikr-weather1.netlify.app/",
   },
@@ -81,7 +107,7 @@ export const FRONTEND = [
     id: 3,
     name: "PWA Weather App",
     short_desc: "ReactJs, Material-UI",
-    image: "assets/images/weather-2.jpg",
+    image: weather2,
     gitLink: "https://github.com/ikReza/pwa-weather-app2",
     webLink: "https://ikr-weather2.netlify.app/",
   },

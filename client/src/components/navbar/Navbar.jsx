@@ -19,18 +19,17 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Menu,
-  Book,
-  AssignmentInd,
-  Apps,
-  ContactMail,
-  AccountCircle,
   Facebook,
   Instagram,
   YouTube,
   LinkedIn,
 } from "@material-ui/icons";
-import avatar from "../profile.jpg";
-import Footer from "./Footer";
+import Footer from "../Footer";
+import avatar from "../assets/profile.jpg";
+
+import { menuItems } from "./menuItems";
+
+import "./navbar.scss";
 
 const useStyles = makeStyles((theme) => ({
   typo: {
@@ -64,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menuButton: {
-    marginRight: theme.spacing(2),
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
@@ -108,34 +106,6 @@ const fb = "https://www.facebook.com/kaiser.ireza";
 const yt = "https://www.youtube.com/channel/UCoDVvnIbgHH7oZS67iLiEfg";
 const ig = "https://www.instagram.com/kaiser_reza";
 const ln = "https://www.linkedin.com/in/ibrahim-kaiser/";
-
-const menuItems = [
-  {
-    listIcon: <AssignmentInd />,
-    listText: "Resume",
-    link: "/resume",
-  },
-  {
-    listIcon: <Apps />,
-    listText: "Portfolio",
-    link: "/portfolio",
-  },
-  {
-    listIcon: <Book />,
-    listText: "Blog",
-    link: "/blog",
-  },
-  {
-    listIcon: <ContactMail />,
-    listText: "Contacts",
-    link: "/contact",
-  },
-  {
-    listIcon: <AccountCircle />,
-    listText: "About Me",
-    link: "/about",
-  },
-];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -186,10 +156,10 @@ const Navbar = () => {
   );
 
   return (
-    <>
-      <Box component="nav">
-        <AppBar position="static" style={{ background: "#0B0C10" }}>
-          <Toolbar style={{ display: "flex" }}>
+    <Box component="nav">
+      <AppBar position="static" style={{ background: "#0B0C10" }}>
+        <Toolbar style={{ display: "flex" }}>
+          <div className="nav-menu">
             <IconButton
               onClick={() => setIsOpen(true)}
               className={classes.menuButton}
@@ -199,59 +169,46 @@ const Navbar = () => {
             <Typography component={Link} to="/" className={classes.typo}>
               Ibrahim Kaiser
             </Typography>
-            <List className={classes.desktopView} style={{ flexGrow: 10 }}>
-              {menuItems.map((item, key) => (
-                <Button
-                  component={Link}
-                  to={item.link}
-                  key={key}
-                  variant="contained"
-                  size="small"
-                  className={classes.desktopButton}
-                  onClick={googleAnalyticsDesktop}
-                >
-                  {item.listText}
-                </Button>
-              ))}
-            </List>
-            <List className={classes.desktopView} style={{ flexGrow: 1 }}>
-              <IconButton
-                className={classes.btn}
-                onClick={() => window.open(fb)}
+          </div>
+          <List className={classes.desktopView} style={{ flexGrow: 10 }}>
+            {menuItems.map((item, key) => (
+              <Button
+                component={Link}
+                to={item.link}
+                key={key}
+                variant="contained"
+                size="small"
+                className={classes.desktopButton}
+                onClick={googleAnalyticsDesktop}
               >
-                <Facebook size="small" style={{ color: "#3b5998" }} />
-              </IconButton>
-              <IconButton
-                className={classes.btn}
-                onClick={() => window.open(ln)}
-              >
-                <LinkedIn style={{ color: "#0e76a8" }} />
-              </IconButton>
-              <IconButton
-                className={classes.instaBtn}
-                onClick={() => window.open(ig)}
-              >
-                <Instagram style={{ color: "white" }} />
-              </IconButton>
-              <IconButton
-                className={classes.btn}
-                onClick={() => window.open(yt)}
-              >
-                <YouTube style={{ color: "#c4302b" }} />
-              </IconButton>
-            </List>
-            <Drawer
-              anchor="right"
-              open={isOpen}
-              onClose={() => setIsOpen(false)}
+                {item.listText}
+              </Button>
+            ))}
+          </List>
+          <List className={classes.desktopView} style={{ flexGrow: 1 }}>
+            <IconButton className={classes.btn} onClick={() => window.open(fb)}>
+              <Facebook size="small" style={{ color: "#3b5998" }} />
+            </IconButton>
+            <IconButton className={classes.btn} onClick={() => window.open(ln)}>
+              <LinkedIn style={{ color: "#0e76a8" }} />
+            </IconButton>
+            <IconButton
+              className={classes.instaBtn}
+              onClick={() => window.open(ig)}
             >
-              {sideList()}
-              <Footer />
-            </Drawer>
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </>
+              <Instagram style={{ color: "white" }} />
+            </IconButton>
+            <IconButton className={classes.btn} onClick={() => window.open(yt)}>
+              <YouTube style={{ color: "#c4302b" }} />
+            </IconButton>
+          </List>
+          <Drawer anchor="right" open={isOpen} onClose={() => setIsOpen(false)}>
+            {sideList()}
+            <Footer />
+          </Drawer>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
 

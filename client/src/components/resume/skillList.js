@@ -1,10 +1,18 @@
 export const SKILLS = {
   Software: ["AutoCAD", "PTV Vissim", "VSCode"],
   Programming: ["C++", "Python", "Javascript"],
-  Frontend: ["ReactJS", "HTML5", "CSS3", "Material-UI", "SASS", "Bootstrap"],
-  Backend: ["NodeJS", "Flask"],
+  Frontend: [
+    "ReactJS",
+    "HTML5",
+    "CSS3",
+    "Redux",
+    "Material-UI",
+    "SASS",
+    "Bootstrap",
+  ],
+  Backend: ["NodeJS"],
   Database: ["MongoDB"],
-  Others: ["Machine Learning", "Streamlit"],
+  Others: ["Machine Learning", "Git", "Streamlit"],
 };
 
 // const mySkills = Object.keys(SKILLS).map((key) => {

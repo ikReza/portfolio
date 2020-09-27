@@ -3,7 +3,7 @@ import { Box, Avatar, Typography, Tooltip } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { PhoneInTalk } from "@material-ui/icons";
 
-import avatar from "../profile.jpg";
+import avatar from "./assets/profile.jpg";
 import Typed from "react-typed";
 
 //CSS

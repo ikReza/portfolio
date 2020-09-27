@@ -1,0 +1,28 @@
+.ikr-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+  animation: floating 2s linear infinite;
+
+  .ikr-box1 {
+    font-size: 40px;
+    font-weight: bolder;
+    background-color: #233;
+    color: tomato;
+    padding: 10px 15px;
+    letter-spacing: 2px;
+  }
+
+  @keyframes floating {
+    0% {
+      transform: unset;
+    }
+    50% {
+      transform: translateY(10%);
+    }
+    100% {
+      transform: unset;
+    }
+  }
+}

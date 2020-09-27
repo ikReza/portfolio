@@ -1,11 +1,6 @@
 import React from "react";
 import { Typography, Box, Grid, IconButton, Tooltip } from "@material-ui/core";
-import {
-  makeStyles,
-  createMuiTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { Email, LinkedIn, GitHub } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import MainFooter from "../MainFooter";
@@ -14,11 +9,9 @@ import TopicHeader from "./topicHeader";
 import { SKILLS } from "./skillList";
 
 import "./resume.scss";
+import MyName from "./myName";
 
-let theme = createMuiTheme();
-theme = responsiveFontSizes(theme);
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   mainContainer: {
     background: "#233",
     color: "tomato",
@@ -52,25 +45,7 @@ const Resume = () => {
 
   return (
     <Box component="div" style={{ background: "#233" }}>
-      <Grid container justify="center">
-        <Grid item xs={8} sm={5} md={4}>
-          <Box
-            style={{
-              margin: "1vh auto 3vh auto",
-            }}
-          >
-            <ThemeProvider theme={theme}>
-              <Typography
-                variant="h3"
-                align="center"
-                style={{ color: "tomato" }}
-              >
-                Ibrahim Kaiser
-              </Typography>
-            </ThemeProvider>
-          </Box>
-        </Grid>
-      </Grid>
+      <MyName />
 
       <Grid container justify="center" spacing={2}>
         <Grid item xs={11} sm={5}>

@@ -20,7 +20,7 @@ import {
 import { useStyles } from "./styles";
 import { GitHub, Language, ExpandMore } from "@material-ui/icons";
 
-import { MACHINE, WEB, FRONTEND } from "./projects";
+import { MACHINE, WEB, FRONTEND, MLProjects } from "./projects";
 import MainFooter from "../MainFooter";
 import ProjectNavigation from "../ProjectNavigation";
 
@@ -76,6 +76,58 @@ const Portfolio = () => {
                 </Accordion>
               </Box>
             </Box>
+          </Grid>
+        ))}
+      </Grid>
+
+      <Grid container justify="center" spacing={2}>
+        {MLProjects.map((m, i) => (
+          <Grid item xs={11} sm={8} md={5} key={i}>
+            <Card className={classes.cardContainer}>
+              <Box className={classes.imgContainer}>
+                <img src={m.image} alt={m.name} className={classes.media} />
+              </Box>
+              <CardContent>
+                <Typography variant="h5" gutterBottom>
+                  {m.name}
+                </Typography>
+                <Typography variant="subtitle2">{m.short_desc}</Typography>
+              </CardContent>
+              <CardActions className={classes.btnBox}>
+                <Button
+                  size="small"
+                  color="primary"
+                  onMouseEnter={() => {
+                    setHoverL(true);
+                    setID(m.id);
+                  }}
+                  onMouseLeave={() => {
+                    setHoverL(false);
+                    setID(-1);
+                  }}
+                  className={classes.btnLeft}
+                  onClick={() => window.open(m.gitLink)}
+                >
+                  {hoverL && ID === m.id ? <GitHub /> : "Github"}
+                </Button>
+                <Button
+                  size="small"
+                  color="primary"
+                  onMouseEnter={() => {
+                    setHoverR(true);
+                    setID(m.id);
+                  }}
+                  onMouseLeave={() => {
+                    setHoverR(false);
+                    setID(-1);
+                  }}
+                  className={classes.btnRight}
+                  onClick={() => window.open(m.webLink)}
+                >
+                  {hoverR && ID === m.id ? <Language /> : "Live Demo"}
+                </Button>
+              </CardActions>
+            </Card>
           </Grid>
         ))}
       </Grid>

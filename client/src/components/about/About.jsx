@@ -5,6 +5,9 @@ import { Box, Typography, Grid, Avatar, Hidden } from "@material-ui/core";
 import MainFooter from "../MainFooter";
 import { useStyles } from "./styles";
 
+import profileImg from "../assets/card.jpg";
+import { CONTENTS } from "./contents";
+
 //JSX
 const About = () => {
   const classes = useStyles();
@@ -17,14 +20,14 @@ const About = () => {
             <Box className={classes.card}>
               <Hidden xsDown>
                 <img
-                  src="assets/images/card.jpg"
+                  src={profileImg}
                   alt="Ibrahim Kaiser"
                   className={classes.circle}
                 />
               </Hidden>
               <Hidden smUp>
                 <img
-                  src="assets/images/card.jpg"
+                  src={profileImg}
                   alt="Ibrahim Kaiser"
                   className={classes.mblCircle}
                 />
@@ -90,8 +93,7 @@ const About = () => {
                   justifyContent: "space-evenly",
                 }}
               >
-                <Box
-                  component="div"
+                <div
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -99,81 +101,26 @@ const About = () => {
                     flexWrap: "wrap",
                   }}
                 >
-                  <Box
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Avatar
-                      alt="trekking"
-                      src="/assets/images/trekking.jpg"
-                      className={classes.avatar}
-                    />
-                    <Typography className={classes.text}>Trekking</Typography>
-                  </Box>
-                  <Box
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Avatar
-                      alt="coffee"
-                      src="/assets/images/coffee.jpg"
-                      className={classes.avatar}
-                    />
-                    <Typography className={classes.text}>Coffee</Typography>
-                  </Box>
-                  <Box
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Avatar
-                      alt="dance"
-                      src="/assets/images/dance.jpg"
-                      className={classes.avatar}
-                    />
-                    <Typography className={classes.text}>Dance</Typography>
-                  </Box>
-                  <Box
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Avatar
-                      alt="tree planting"
-                      src="/assets/images/tree.jpg"
-                      className={classes.avatar}
-                    />
-                    <Typography className={classes.text}>
-                      Planting Trees
-                    </Typography>
-                  </Box>
-                  <Box
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Avatar
-                      alt="video editing"
-                      src="/assets/images/video.png"
-                      className={classes.avatar}
-                    />
-                    <Typography className={classes.text}>
-                      Video Editing
-                    </Typography>
-                  </Box>
-                </Box>
+                  {CONTENTS.map((item, idx) => (
+                    <Box
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
+                      key={idx}
+                    >
+                      <Avatar
+                        alt={item.name}
+                        src={item.src}
+                        className={classes.avatar}
+                      />
+                      <Typography className={classes.text}>
+                        {item.name}
+                      </Typography>
+                    </Box>
+                  ))}
+                </div>
               </Box>
             </Box>
           </Grid>

@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Book,
+  // Book,
   AssignmentInd,
   Apps,
   ContactMail,
@@ -18,11 +18,11 @@ export const menuItems = [
     listText: "Portfolio",
     link: "/portfolio",
   },
-  {
-    listIcon: <Book />,
-    listText: "Blog",
-    link: "/blog",
-  },
+  // {
+  //   listIcon: <Book />,
+  //   listText: "Blog",
+  //   link: "/blog",
+  // },
   {
     listIcon: <ContactMail />,
     listText: "Contacts",

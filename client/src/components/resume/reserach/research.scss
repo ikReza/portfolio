@@ -1,0 +1,16 @@
+.research-topic {
+  font-size: 18px;
+  color: white;
+
+  .research-prof {
+    &:hover {
+      color: #66fcf1;
+      cursor: pointer;
+    }
+  }
+}
+
+.research-objectives {
+  color: tan;
+  font-size: 16px;
+}

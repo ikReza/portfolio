@@ -10,30 +10,17 @@ import { SKILLS } from "./skillList";
 
 import "./resume.scss";
 import MyName from "./myName";
+import Reserach from "./reserach/reserach";
+import Education from "./education/education";
+import ExtraCurricular from "./extraCurricular/extraCurricular";
 
-<<<<<<< HEAD
 const useStyles = makeStyles(() => ({
-=======
-const useStyles = makeStyles((theme) => ({
->>>>>>> 73b70ecf5993afc5800f8d70b6d20a38aa50bb3b
-  mainContainer: {
-    background: "#233",
-    color: "tomato",
-  },
-
   icon: {
     color: "tan",
   },
   btn: {
     "&:hover": {
       background: "rgb(0,128,128, 0.2)",
-    },
-  },
-  buet: {
-    color: "whitesmoke",
-    "&:hover": {
-      color: "#66FCF1",
-      cursor: "pointer",
     },
   },
   codeforce: {
@@ -120,63 +107,10 @@ const Resume = () => {
       </Grid>
 
       {/* Education */}
-      <TopicHeader>Education</TopicHeader>
+      <Education />
 
-      <Grid container justify="center">
-        <Grid item xs={11} sm={10}>
-          <Box
-            style={{
-              margin: "1vh auto 0 auto",
-              padding: "2%",
-            }}
-          >
-            <Typography
-              className={classes.buet}
-              gutterBottom
-              onClick={() => window.open("https://www.buet.ac.bd/web/")}
-            >
-              Bangladesh University of Engineering and Technology (BUET)
-            </Typography>
-            <Typography style={{ fontSize: "0.9rem", color: "tan" }}>
-              BSc in Civil Engineering
-            </Typography>
-            <Typography style={{ color: "tan", fontSize: "0.9rem" }}>
-              <em>Thesis:</em> “Design, Construction and Quality Control of
-              Driven Concrete Pile.”
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={11} sm={10}>
-          <Box
-            style={{
-              margin: "1vh auto 0 auto",
-              padding: "2%",
-            }}
-          >
-            <Typography gutterBottom style={{ color: "whitesmoke" }}>
-              Milestone College
-            </Typography>
-            <Typography style={{ color: "tan", fontSize: "0.9rem" }}>
-              Higher Secondry Certificate (HSC)
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={11} sm={10}>
-          <Box
-            style={{
-              margin: "1vh auto",
-              padding: "2%",
-            }}
-          >
-            <Typography gutterBottom style={{ color: "whitesmoke" }}>
-              Rajendrapur Cantonment Public School and College
-            </Typography>
-            <Typography style={{ color: "tan", fontSize: "0.9rem" }}>
-              Secondary School Certificate (SSC)
-            </Typography>
-          </Box>
-        </Grid>
-      </Grid>
+      {/* Research */}
+      <Reserach />
 
       {/* Skills */}
       <div className="skill-section">
@@ -300,38 +234,7 @@ const Resume = () => {
       </Grid>
 
       {/* Extra-Curricular Activities */}
-      <TopicHeader>Extra-Curricular Activities</TopicHeader>
-
-      <Grid container justify="center">
-        <Grid item xs={11} sm={10}>
-          <Box
-            style={{
-              margin: "1vh auto",
-              padding: "2%",
-            }}
-          >
-            <ul>
-              <Typography style={{ color: "tan" }} component="li">
-                President, BUET Dance Club
-              </Typography>
-              <Typography style={{ color: "tan" }} component="li">
-                Organizer of ‘Inter University Dance Fest, BUET, Season-4,
-                2018’, (the biggest and most hyped show in BUET, with performers
-                from different university and international guests)
-              </Typography>
-              <Typography style={{ color: "tan" }} component="li">
-                Organizer of “ECCENTRIC: Civil Engineering Festival,2018”
-              </Typography>
-              <Typography style={{ color: "tan" }} component="li">
-                Member of Badhan(a voluntary blood donor’s organization)
-              </Typography>
-              <Typography style={{ color: "tan" }} component="li">
-                Mess manager of Titumir Hall(dormitory) dining of 400 students
-              </Typography>
-            </ul>
-          </Box>
-        </Grid>
-      </Grid>
+      <ExtraCurricular />
 
       {/* Online Judge */}
       <TopicHeader>Online Judge</TopicHeader>

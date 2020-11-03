@@ -170,7 +170,14 @@ const Navbar = () => {
               Ibrahim Kaiser
             </Typography>
           </div>
-          <List className={classes.desktopView} style={{ flexGrow: 10 }}>
+          <List
+            className={classes.desktopView}
+            style={{
+              flexGrow: 10,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             {menuItems.map((item, key) => (
               <Button
                 component={Link}

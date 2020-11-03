@@ -10,7 +10,7 @@ export const SKILLS = {
     "SASS",
     "Bootstrap",
   ],
-  Backend: ["NodeJS"],
+  Backend: ["NodeJS", "Django"],
   Database: ["MongoDB"],
   Others: ["Machine Learning", "Git", "Streamlit"],
 };

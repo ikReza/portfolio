@@ -69,8 +69,8 @@ const Header = () => {
             "Web Design",
             "Machine Learning",
           ]}
-          typeSpeed={40}
-          backSpeed={50}
+          typeSpeed={30}
+          backSpeed={40}
           loop
         ></Typed>
       </Typography>

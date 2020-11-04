@@ -1,3 +1,27 @@
+.menuSliderContainer {
+  height: 100%;
+  width: 100%;
+  background: #1f2833;
+
+  .avatar {
+    display: block;
+    margin: 2vh auto;
+    height: 104px;
+    width: 104px;
+  }
+
+  .list-item1 {
+    color: tan;
+  }
+
+  .list-item2 {
+    color: tan;
+    &:active {
+      color: tomato;
+    }
+  }
+}
+
 .nav-menu {
   @media screen and (max-width: 959px) {
     width: 100%;
@@ -5,5 +29,70 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .nav-menuButton {
+    @media screen and (min-width: 960px) {
+      display: none;
+    }
+    .nav-burgerIcon {
+      color: tomato;
+      &:active {
+        color: #66fcf1;
+      }
+    }
+  }
+
+  .nav-typo {
+    color: white;
+    flex-grow: 1;
+  }
+}
+
+.nav-desktopView {
+  display: flex;
+  flex-grow: 10;
+  justify-content: center;
+  @media screen and (max-width: 959px) {
+    display: none;
+  }
+
+  .nav-desktopButton {
+    color: tomato;
+    background: #1f2833;
+    margin: auto 1vw;
+    width: 16%;
+    &:hover {
+      background: lighten($color: #1f2833, $amount: 10%);
+    }
+  }
+
+  //
+  @mixin commonProperties {
+    margin: auto 0.5vw;
+    padding: 4px;
+  }
+  $instaBackground: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+
+  .nav-socialButton {
+    @include commonProperties();
+    background: white;
+    &:hover {
+      background: darken($color: white, $amount: 10%);
+    }
+  }
+  .nav-instaButton {
+    @include commonProperties();
+    background: $instaBackground;
+    &:hover {
+      filter: brightness(80%);
+    }
   }
 }

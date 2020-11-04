@@ -16,7 +16,6 @@ import {
   ListItemText,
   Button,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Menu,
   Facebook,
@@ -31,76 +30,6 @@ import { menuItems } from "./menuItems";
 
 import "./navbar.scss";
 
-const useStyles = makeStyles((theme) => ({
-  typo: {
-    flexGrow: 1,
-    color: "white",
-  },
-  arrowIcon: {
-    color: "tomato",
-    "&:active": {
-      color: "#66FCF1",
-    },
-  },
-  menuSliderContainer: {
-    height: "100%",
-    width: "100%",
-    background: "#1F2833",
-  },
-  avatar: {
-    display: "block",
-    margin: "0.5rem auto",
-    height: theme.spacing(13),
-    width: theme.spacing(13),
-  },
-  listItem1: {
-    color: "tan",
-  },
-  listItem2: {
-    color: "tan",
-    "&:hover": {
-      color: "tomato",
-    },
-  },
-  menuButton: {
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
-  },
-  desktopView: {
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
-  desktopButton: {
-    color: "tomato",
-    background: "#1F2833",
-    margin: "auto 1vw",
-    width: "16%",
-    "&:hover": {
-      background: "#233",
-      filter: "brightness(150%)",
-    },
-  },
-  btn: {
-    background: "white",
-    margin: "auto 0.5vw",
-    padding: theme.spacing(0.5),
-    "&:hover": {
-      background: "#d2d9d3",
-    },
-  },
-  instaBtn: {
-    background:
-      "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
-    margin: "auto 0.5vw",
-    padding: theme.spacing(0.5),
-    "&:hover": {
-      filter: "brightness(80%)",
-    },
-  },
-}));
-
 //links
 const fb = "https://www.facebook.com/kaiser.ireza";
 const yt = "https://www.youtube.com/channel/UCoDVvnIbgHH7oZS67iLiEfg";
@@ -109,7 +38,6 @@ const ln = "https://www.linkedin.com/in/ibrahim-kaiser/";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const classes = useStyles();
 
   const googleAnalyticsMobile = () => {
     ReactGA.event({
@@ -128,10 +56,10 @@ const Navbar = () => {
   const sideList = () => (
     <Box
       component="div"
-      className={classes.menuSliderContainer}
+      className="menuSliderContainer"
       onClick={() => setIsOpen(false)}
     >
-      <Avatar src={avatar} alt="Ibrahim Kaiser" className={classes.avatar} />
+      <Avatar src={avatar} alt="Ibrahim Kaiser" className="avatar" />
       <Divider />
       <List>
         {menuItems.map((item, key) => (
@@ -142,13 +70,8 @@ const Navbar = () => {
             to={item.link}
             onClick={googleAnalyticsMobile}
           >
-            <ListItemIcon className={classes.listItem1}>
-              {item.listIcon}
-            </ListItemIcon>
-            <ListItemText
-              primary={item.listText}
-              className={classes.listItem2}
-            />
+            <ListItemIcon className="list-item1">{item.listIcon}</ListItemIcon>
+            <ListItemText primary={item.listText} className="list-item2" />
           </ListItem>
         ))}
       </List>
@@ -162,22 +85,15 @@ const Navbar = () => {
           <div className="nav-menu">
             <IconButton
               onClick={() => setIsOpen(true)}
-              className={classes.menuButton}
+              className="nav-menuButton"
             >
-              <Menu className={classes.arrowIcon} />
+              <Menu className="nav-burgerIcon" />
             </IconButton>
-            <Typography component={Link} to="/" className={classes.typo}>
+            <Typography component={Link} to="/" className="nav-typo">
               Ibrahim Kaiser
             </Typography>
           </div>
-          <List
-            className={classes.desktopView}
-            style={{
-              flexGrow: 10,
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
+          <List className="nav-desktopView">
             {menuItems.map((item, key) => (
               <Button
                 component={Link}
@@ -185,27 +101,36 @@ const Navbar = () => {
                 key={key}
                 variant="contained"
                 size="small"
-                className={classes.desktopButton}
+                className="nav-desktopButton"
                 onClick={googleAnalyticsDesktop}
               >
                 {item.listText}
               </Button>
             ))}
           </List>
-          <List className={classes.desktopView} style={{ flexGrow: 1 }}>
-            <IconButton className={classes.btn} onClick={() => window.open(fb)}>
+          <List className="nav-desktopView" style={{ flexGrow: 1 }}>
+            <IconButton
+              className="nav-socialButton"
+              onClick={() => window.open(fb)}
+            >
               <Facebook size="small" style={{ color: "#3b5998" }} />
             </IconButton>
-            <IconButton className={classes.btn} onClick={() => window.open(ln)}>
+            <IconButton
+              className="nav-socialButton"
+              onClick={() => window.open(ln)}
+            >
               <LinkedIn style={{ color: "#0e76a8" }} />
             </IconButton>
             <IconButton
-              className={classes.instaBtn}
+              className="nav-instaButton"
               onClick={() => window.open(ig)}
             >
               <Instagram style={{ color: "white" }} />
             </IconButton>
-            <IconButton className={classes.btn} onClick={() => window.open(yt)}>
+            <IconButton
+              className="nav-socialButton"
+              onClick={() => window.open(yt)}
+            >
               <YouTube style={{ color: "#c4302b" }} />
             </IconButton>
           </List>

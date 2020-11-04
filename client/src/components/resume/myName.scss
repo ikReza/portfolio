@@ -12,6 +12,10 @@
     color: tomato;
     padding: 10px 15px;
     letter-spacing: 2px;
+
+    @media screen and (max-width: 959px) {
+      font-size: 30px;
+    }
   }
 
   @keyframes floating {

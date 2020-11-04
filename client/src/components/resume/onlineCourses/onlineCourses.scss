@@ -1,0 +1,23 @@
+.online-course-li1 {
+  color: white;
+  font-size: 16px;
+  padding-left: 2%;
+
+  .online-course-li2 {
+    color: tan;
+    font-size: 15px;
+    list-style: none;
+    li {
+      em {
+        color: #ebad05;
+      }
+    }
+
+    .credential-link {
+      &:hover {
+        color: #66fcf1;
+        cursor: pointer;
+      }
+    }
+  }
+}

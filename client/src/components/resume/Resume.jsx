@@ -13,6 +13,7 @@ import MyName from "./myName";
 import Reserach from "./reserach/reserach";
 import Education from "./education/education";
 import ExtraCurricular from "./extraCurricular/extraCurricular";
+import OnlineCourses from "./onlineCourses/onlineCourses";
 
 const useStyles = makeStyles(() => ({
   icon: {
@@ -136,102 +137,7 @@ const Resume = () => {
       </div>
 
       {/* Online Courses */}
-      <TopicHeader>Online Courses</TopicHeader>
-
-      <Grid container justify="center">
-        <Grid item xs={11} sm={10}>
-          <Box
-            style={{
-              margin: "1vh auto",
-              padding: "2%",
-            }}
-          >
-            <ul>
-              <Typography style={{ color: "white" }} component="li">
-                Introduction to TensorFlow for Artificial Intelligence, Machine
-                Learning, and Deep Learning
-              </Typography>
-              <ul style={{ listStyle: "none" }}>
-                <Typography style={{ color: "tan" }} component="li">
-                  <em style={{ color: "#ebad05" }}>Issuing Organization: </em>
-                  Coursera
-                </Typography>
-                <Typography
-                  style={{ color: "tan" }}
-                  component="li"
-                  gutterBottom
-                >
-                  <em style={{ color: "#ebad05" }}>Credential URL: </em>{" "}
-                  <span
-                    className={classes.codeforce}
-                    onClick={() =>
-                      window.open(
-                        "https://www.coursera.org/account/accomplishments/certificate/HLLVLGMRJG87"
-                      )
-                    }
-                  >
-                    See credential
-                  </span>
-                </Typography>
-              </ul>
-
-              <Typography style={{ color: "white" }} component="li">
-                Traffic Sign Classification Using Deep Learning in Python/Keras
-              </Typography>
-              <ul style={{ listStyle: "none" }}>
-                <Typography style={{ color: "tan" }} component="li">
-                  <em style={{ color: "#ebad05" }}>Issuing Organization: </em>
-                  Coursera
-                </Typography>
-                <Typography
-                  style={{ color: "tan" }}
-                  component="li"
-                  gutterBottom
-                >
-                  <em style={{ color: "#ebad05" }}>Credential URL: </em>{" "}
-                  <span
-                    className={classes.codeforce}
-                    onClick={() =>
-                      window.open(
-                        "https://www.coursera.org/account/accomplishments/certificate/8X2CQV3DNR82"
-                      )
-                    }
-                  >
-                    See credential
-                  </span>
-                </Typography>
-              </ul>
-
-              <Typography style={{ color: "white" }} component="li">
-                Perform Real-Time Object Detection with YOLOv3
-              </Typography>
-              <ul style={{ listStyle: "none" }}>
-                <Typography style={{ color: "tan" }} component="li">
-                  <em style={{ color: "#ebad05" }}>Issuing Organization: </em>
-                  Coursera
-                </Typography>
-                <Typography
-                  style={{ color: "tan" }}
-                  component="li"
-                  gutterBottom
-                >
-                  <em style={{ color: "#ebad05" }}>Credential URL: </em>{" "}
-                  <span
-                    className={classes.codeforce}
-                    onClick={() =>
-                      window.open(
-                        "https://www.coursera.org/account/accomplishments/certificate/UBU82JSXT7DY"
-                      )
-                    }
-                  >
-                    See credential
-                  </span>
-                </Typography>
-              </ul>
-            </ul>
-          </Box>
-        </Grid>
-      </Grid>
+      <OnlineCourses />
 
       {/* Extra-Curricular Activities */}
       <ExtraCurricular />

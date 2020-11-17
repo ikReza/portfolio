@@ -1,0 +1,28 @@
+.about-container {
+  width: 100%;
+  background: transparent;
+
+  .about-box {
+    padding: 10px;
+    text-align: justify;
+    background-color: #233;
+
+    .about-img {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      float: left;
+      shape-outside: circle();
+      margin: 30px;
+
+      @media screen and (max-width: 600px) {
+        height: 150px;
+        width: 150px;
+      }
+    }
+
+    p {
+      color: tan;
+    }
+  }
+}

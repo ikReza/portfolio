@@ -72,7 +72,7 @@ export const WEB = [
     description: "ReactJS, NodeJS",
     image: chatApp,
     gitLink: "https://github.com/ikReza/SimpleChatApp",
-    webLink: "https://vigorous-ritchie-6baaee.netlify.app",
+    webLink: "https://chat-with-ikr.netlify.app/",
   },
 ];
 

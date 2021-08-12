@@ -10,6 +10,7 @@ import { SKILLS } from "./skillList";
 
 import "./resume.scss";
 import MyName from "./myName";
+import WorkExperience from "./workExperience/workExperience";
 import Reserach from "./reserach/reserach";
 import Education from "./education/education";
 import ExtraCurricular from "./extraCurricular/extraCurricular";
@@ -109,6 +110,9 @@ const Resume = () => {
 
       {/* Education */}
       <Education />
+
+      {/* Education */}
+      <WorkExperience />
 
       {/* Research */}
       <Reserach />

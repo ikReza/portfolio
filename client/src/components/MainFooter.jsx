@@ -19,7 +19,7 @@ const MainFooter = () => {
   return (
     <Box component="footer" className={classes.footer}>
       <Typography variant="subtitle2" style={{ color: "whitesmoke" }}>
-        Copyright © 2020 Ibrahim Kaiser
+        Ibrahim Kaiser © 2020-2021
       </Typography>
     </Box>
   );

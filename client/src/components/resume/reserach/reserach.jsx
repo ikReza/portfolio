@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography } from "@material-ui/core";
+import { Box, Grid, Typography, Tooltip } from "@material-ui/core";
 
 import TopicHeader from "../topicHeader";
 
@@ -8,7 +8,7 @@ import "./research.scss";
 const Reserach = () => {
   return (
     <div>
-      <TopicHeader>Manuscript Under Review</TopicHeader>
+      <TopicHeader>Research Paper</TopicHeader>
 
       <Grid container justify="center">
         <Grid item xs={11} sm={10}>
@@ -19,21 +19,21 @@ const Reserach = () => {
             }}
           >
             <Typography className="research-topic">
-              <strong>Ibrahim Kaiser</strong>, Md. Jamil Ahsan,{" "}
-              <span
-                onClick={() =>
-                  window.open(
-                    "https://ce.buet.ac.bd/profile-of-md-shamsul-hoque/"
-                  )
-                }
-                className="research-prof"
-              >
-                MD. Shamsul Hoque
-              </span>
-              ,{" "}
+              <strong>Ibrahim Kaiser</strong>, Md. Jamil Ahsan ,{" "}
               <em>
-                “Application of Stress Induced Piezoelectric Harvesters in the
-                Context of Bangladesh”
+                <Tooltip title="ResearchGate">
+                  <span
+                    onClick={() =>
+                      window.open(
+                        "https://www.researchgate.net/publication/353466182_APPLICATION_OF_STRESS_INDUCED_PIEZOELECTRIC_HARVESTERS_IN_THE_CONTEXT_OF_BANGLADESH"
+                      )
+                    }
+                    className="research-url"
+                  >
+                    “Application of Stress Induced Piezoelectric Harvesters in
+                    the Context of Bangladesh”
+                  </span>
+                </Tooltip>
               </em>
             </Typography>
             <ul className="research-objectives">
